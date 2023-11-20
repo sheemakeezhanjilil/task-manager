@@ -241,10 +241,10 @@ export class WrappableTableComponent implements  OnInit, OnDestroy {
     console.log(row)
     let color: string = '';
     let currDate = this.datePipe.transform(this.todayDate,'yyyy-MM-dd');
-    var dueDate = new Date(row.value.dueDate);
-    var weekAgoDate = dueDate.setDate(dueDate.getDate()- 7);
+    var dueDate = row.value.dueDate?new Date(row.value.dueDate):null;
+    var weekAgoDate = dueDate?.setDate(dueDate.getDate()- 7);
     let warnDate = this.datePipe.transform(weekAgoDate,'yyyy-MM-dd');
-    if (currDate && row.value.dueDate <= currDate) {
+    if (currDate && row.value.dueDate &&row.value.dueDate <= currDate) {
       color = 'red'
     } else if (currDate && warnDate && (currDate >= warnDate) && (warnDate < row.value.dueDate)) {
       color = 'yellow'
