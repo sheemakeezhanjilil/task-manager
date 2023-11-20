@@ -248,6 +248,8 @@ export class WrappableTableComponent implements  OnInit, OnDestroy {
       color = 'red'
     } else if (currDate && warnDate && (currDate >= warnDate) && (warnDate < row.value.dueDate)) {
       color = 'yellow'
+    } else {
+      color = 'white'
     }
     return color;
   }

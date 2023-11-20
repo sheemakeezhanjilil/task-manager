@@ -25,6 +25,10 @@ table {
     background-color: yellow;
   }
 
+  .white {
+    background-color: white;
+  }
+
   :host ::ng-deep .mat-form-field-flex {
     background: inherit;
   }
